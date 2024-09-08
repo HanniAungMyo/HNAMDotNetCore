@@ -38,6 +38,20 @@ SLH => Collin
 
 Bank + 5000
 
-SLHDotNetCore
+--sql
+
+SELECT [BlogId]
+      ,[BlogTitle]
+      ,[BlogAuthor]
+      ,[BlogContent]
+	  
+  FROM [dbo].[Tbl_Blog]
+
+GO
+select * from Tbl_Blog where DeleteFlag=0
 
 
+Update Tbl_Blog set DeleteFlag=0
+Update Tbl_Blog set DeleteFlag=1 where BlogId=1
+
+Delete from Tbl_Blog Where BlogId=13
