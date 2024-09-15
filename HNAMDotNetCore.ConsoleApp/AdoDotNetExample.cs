@@ -130,41 +130,41 @@ namespace HNAMDotNetCore.ConsoleApp
                 Console.WriteLine(result == 1 ? "Saving Successful." : "Saving Failed.");
             }
 
-            public void Edit()
-            {
-                Console.Write("Blog Id: ");
-                string id = Console.ReadLine()!;
+        public void Edit()
+        {
+            Console.Write("Blog Id: ");
+            string id = Console.ReadLine()!;
 
-                SqlConnection connection = new SqlConnection(_connectionString);
-                connection.Open();
+            SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
 
-                string query = @"SELECT [BlogId]
+            string query = @"SELECT [BlogId]
                                 ,[BlogTitle]
                                 ,[BlogAuthor]
                                 ,[BlogContent]
                                 ,[DeleteFlag]
                                  FROM [dbo].[Tbl_Blog] where BlogId = @BlogId";
 
-                SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@BlogId", id);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@BlogId", id);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
 
-                connection.Close();
+            connection.Close();
 
-                if (dt.Rows.Count == 0)
-                {
-                    Console.WriteLine("No data found.");
-                    return;
-                }
-
-                DataRow dr = dt.Rows[0];
-                Console.WriteLine(dr["BlogId"]);
-                Console.WriteLine(dr["BlogTitle"]);
-                Console.WriteLine(dr["BlogAuthor"]);
-                Console.WriteLine(dr["BlogContent"]);
+            if (dt.Rows.Count == 0)
+            {
+                Console.WriteLine("No data found.");
+                return;
             }
+
+            DataRow dr = dt.Rows[0];
+            Console.WriteLine(dr["BlogId"]);
+            Console.WriteLine(dr["BlogTitle"]);
+            Console.WriteLine(dr["BlogAuthor"]);
+            Console.WriteLine(dr["BlogContent"]);
+        }
 
             public void Update()
             {
