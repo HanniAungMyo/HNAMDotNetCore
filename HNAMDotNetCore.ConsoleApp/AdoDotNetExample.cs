@@ -204,20 +204,20 @@ namespace HNAMDotNetCore.ConsoleApp
         }
 
         public void Delete()
-            {
-                Console.WriteLine("Blog Id: ");
-                string id = Console.ReadLine()!;
-                SqlConnection connection = new SqlConnection(_connectionString);
-                connection.Open();
+        {
+            Console.WriteLine("Blog Id: ");
+            string id = Console.ReadLine()!;
+            SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
 
-                string query = @"DELETE FROM [dbo].[Tbl_Blog]
+            string query = @"DELETE FROM [dbo].[Tbl_Blog]
                        WHERE BlogId=@BlogId";
-                SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@BlogId", id);
-                int result = cmd.ExecuteNonQuery();
-                connection.Close();
-                Console.WriteLine(result == 1 ? "Delete Successful." : "Delete Failed.");
-            }
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@BlogId", id);
+            int result = cmd.ExecuteNonQuery();
+            connection.Close();
+            Console.WriteLine(result == 1 ? "Delete Successful." : "Delete Failed.");
         }
+    }
     }
 
