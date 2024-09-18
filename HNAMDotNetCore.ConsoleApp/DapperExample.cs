@@ -72,6 +72,7 @@ namespace HNAMDotNetCore.ConsoleApp
             Console.WriteLine(item?.BlogContent);
         }
 
+
         public void Update(int id, string title, string author, string content)
         {
             string query = @"UPDATE [dbo].[Tbl_Blog]
