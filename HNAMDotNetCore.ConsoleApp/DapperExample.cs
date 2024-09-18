@@ -29,7 +29,6 @@ namespace HNAMDotNetCore.ConsoleApp
                 Console.WriteLine(item.BlogContent);
             }
         }
-
         public void Create(string title, string author, string content)
         {
             string query = $@"INSERT INTO [dbo].[Tbl_Blog]
@@ -52,7 +51,6 @@ namespace HNAMDotNetCore.ConsoleApp
             Console.WriteLine(result == 1 ? "Create Successful" : "Create Failed");
 
         }
-
         public void Edit(int id)
         {
             using IDbConnection db = new SqlConnection(_connectionString);
@@ -71,9 +69,6 @@ namespace HNAMDotNetCore.ConsoleApp
             Console.WriteLine(item?.BlogAuthor);
             Console.WriteLine(item?.BlogContent);
         }
-
-
-
         public void Update(int id, string title, string author, string content)
         {
             string query = @"UPDATE [dbo].[Tbl_Blog]
@@ -93,8 +88,6 @@ namespace HNAMDotNetCore.ConsoleApp
             });
             Console.WriteLine(result == 1 ? "Update Successful" : "Failed Successful");
         }
-
-
         public void Delete(int id)
         {
             string query = @"DELETE FROM [dbo].[Tbl_Blog]
