@@ -6,10 +6,16 @@ using System.Data.SqlClient;
 Console.WriteLine("Hello, World!");
 //Console.ReadLine();
 
-Console.ReadKey();
+//Console.ReadKey();
 //md =MarkDown
 
-AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
-adoDotNetExample.Read();
+//AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
+//adoDotNetExample.Read();
 //adoDotNetExample.Create();
 //adoDotNetExample.Delete();
+
+DapperExample dapper=new DapperExample();
+dapper.Delete(12);
+Console.ReadKey();
+
+

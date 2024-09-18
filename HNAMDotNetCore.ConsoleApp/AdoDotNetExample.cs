@@ -70,7 +70,7 @@ namespace HNAMDotNetCore.ConsoleApp
                 //}
             }
 
-            public void Create()
+        public void Create()
             {
                 Console.WriteLine("Blog Title: ");
                 string title = Console.ReadLine()!;
