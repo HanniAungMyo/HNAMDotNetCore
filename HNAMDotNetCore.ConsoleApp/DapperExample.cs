@@ -103,5 +103,6 @@ namespace HNAMDotNetCore.ConsoleApp
             });
             Console.WriteLine(result == 1 ? "Delete Successful" : "Delete Failed");
         }
+
     }
 }
