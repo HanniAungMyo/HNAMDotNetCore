@@ -94,6 +94,7 @@ namespace HNAMDotNetCore.ConsoleApp
             Console.WriteLine(result == 1 ? "Update Successful" : "Failed Successful");
         }
 
+
         public void Delete(int id)
         {
             string query = @"DELETE FROM [dbo].[Tbl_Blog]
