@@ -41,6 +41,7 @@ namespace HNAMDotNetCore.ConsoleApp
             Console.WriteLine(result == 1 ? "Saving Successful." : "Saving Failed.");
         }
 
+
         public void Edit(int id)
         {
             AppDbContext db = new AppDbContext();
@@ -54,6 +55,7 @@ namespace HNAMDotNetCore.ConsoleApp
             Console.WriteLine(item?.BlogAuthor);
             Console.WriteLine(item?.BlogContent);
         }
+
 
         public void Update(int id, string title, string author, string content)
         {
