@@ -57,6 +57,7 @@ namespace HNAMDotNetCore.ConsoleApp
         }
 
 
+
         public void Update(int id, string title, string author, string content)
         {
             AppDbContext db = new AppDbContext();
@@ -80,7 +81,7 @@ namespace HNAMDotNetCore.ConsoleApp
             {
                 item!.BlogContent = content;
             }
-            db.Entry(item).State=EntityState.Modified;
+            db.Entry(item).State = EntityState.Modified;
             int result = db.SaveChanges();
             Console.Write(result == 1 ? "Update Successful" : "Update Failed");
 
