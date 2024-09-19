@@ -14,8 +14,13 @@ Console.WriteLine("Hello, World!");
 //adoDotNetExample.Create();
 //adoDotNetExample.Delete();
 
-DapperExample dapper=new DapperExample();
-dapper.Delete(12);
+//DapperExample dapper=new DapperExample();
+//dapper.Delete(12);
+EfCoreExample efCoreExample = new EfCoreExample();
+//efCoreExample.Read();
+//efCoreExample.Create("Title 1","Title 2","Title 3");
+//efCoreExample.Update(10,"HNAM","Hanni","Hi");
+//efCoreExample.Delete(2);
 Console.ReadKey();
 
 
