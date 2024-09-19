@@ -25,7 +25,6 @@ namespace HNAMDotNetCore.ConsoleApp
             }
         }
 
-
         public void Create(string title, string author, string content)
         {
             BlogDataModel blog = new BlogDataModel
@@ -41,7 +40,6 @@ namespace HNAMDotNetCore.ConsoleApp
             Console.WriteLine(result == 1 ? "Saving Successful." : "Saving Failed.");
         }
 
-
         public void Edit(int id)
         {
             AppDbContext db = new AppDbContext();
@@ -55,8 +53,6 @@ namespace HNAMDotNetCore.ConsoleApp
             Console.WriteLine(item?.BlogAuthor);
             Console.WriteLine(item?.BlogContent);
         }
-
-
 
         public void Update(int id, string title, string author, string content)
         {
@@ -86,7 +82,6 @@ namespace HNAMDotNetCore.ConsoleApp
             Console.Write(result == 1 ? "Update Successful" : "Update Failed");
 
         }
-
 
         public void Delete(int id)
         {
