@@ -87,6 +87,7 @@ namespace HNAMDotNetCore.ConsoleApp
 
         }
 
+
         public void Delete(int id)
         {
             AppDbContext db = new AppDbContext();
