@@ -25,6 +25,7 @@ namespace HNAMDotNetCore.ConsoleApp
             }
         }
 
+
         public void Create(string title, string author, string content)
         {
             BlogDataModel blog = new BlogDataModel
