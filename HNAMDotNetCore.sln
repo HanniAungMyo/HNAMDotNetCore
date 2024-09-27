@@ -10,9 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HNAMDotNetCore.Database", "HNAMDotNetCore.Database\HNAMDotNetCore.Database.csproj", "{8BF8963B-41CB-4535-A2BA-D7D53274A0AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HNAMDotNetCore.Database", "HNAMDotNetCore.Database\HNAMDotNetCore.Database.csproj", "{8BF8963B-41CB-4535-A2BA-D7D53274A0AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HNAMDotNetCoreConsoleApp2", "HNAMDotNetCoreConsoleApp2\HNAMDotNetCoreConsoleApp2.csproj", "{52A00880-1BD1-45C9-A186-CD532806B953}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HNAMDotNetCoreConsoleApp2", "HNAMDotNetCoreConsoleApp2\HNAMDotNetCoreConsoleApp2.csproj", "{52A00880-1BD1-45C9-A186-CD532806B953}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHNAMDotNetCore.RestApi", "WebHNAMDotNetCore.RestApi\WebHNAMDotNetCore.RestApi.csproj", "{B640CC90-EE21-45AD-A2B0-E5144C854839}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{52A00880-1BD1-45C9-A186-CD532806B953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52A00880-1BD1-45C9-A186-CD532806B953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52A00880-1BD1-45C9-A186-CD532806B953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B640CC90-EE21-45AD-A2B0-E5144C854839}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B640CC90-EE21-45AD-A2B0-E5144C854839}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B640CC90-EE21-45AD-A2B0-E5144C854839}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B640CC90-EE21-45AD-A2B0-E5144C854839}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
