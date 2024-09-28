@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata;
 
 namespace WebHNAMDotNetCore.RestApi.Controllers
 {
@@ -21,7 +22,10 @@ namespace WebHNAMDotNetCore.RestApi.Controllers
 
         public IActionResult GetBlogById(int id)
         {
-             TblBlog? item = _db.TblBlogs.AsNoTracking().FirstOrDefault(x=>x.BlogId==id);
+             TblBlog? item = _db.TblBlogs
+                .AsNoTracking()
+                .Where(x=>x.DeleteFlag==false)
+                .FirstOrDefault(x=>x.BlogId==id);
             if(item is null)
             {
                     return NotFound();
@@ -51,16 +55,48 @@ namespace WebHNAMDotNetCore.RestApi.Controllers
             _db.SaveChanges();
             return Ok(item);
         }
-        [HttpPatch]
-        public IActionResult PatchBlog()
+        [HttpPatch("{id}")]
+        public IActionResult PatchBlog(int id,TblBlog blog)
         {
-            return Ok();
+            TblBlog? item = _db.TblBlogs.AsNoTracking().FirstOrDefault(x => x.BlogId == id);
+            if (item is null)
+            {
+                return NotFound();
+            }
+            if (!string.IsNullOrEmpty(blog.BlogTitle))
+            {
+                item.BlogTitle = blog.BlogTitle;
+
+            }
+            if (!string.IsNullOrEmpty(blog.BlogAuthor))
+            {
+                item.BlogAuthor = blog.BlogAuthor;
+
+            }
+            if (!string.IsNullOrEmpty(blog.BlogTitle))
+            {
+                item.BlogContent = blog.BlogContent;
+
+            }
+            _db.Entry(item).State = EntityState.Modified;
+            _db.SaveChanges();
+            return Ok(item);
         }
 
 
-        [HttpDelete]
-        public IActionResult DeleteBlog()
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBlog(int id)
         {
+
+            TblBlog? item = _db.TblBlogs.AsNoTracking().FirstOrDefault(x => x.BlogId == id);
+            if (item is null)
+            {
+                return NotFound();
+            }
+            //item.DeleteFlag=true;
+            //_db.Entry(item).State = EntityState.Modified;
+            _db.Entry(item).State = EntityState.Deleted;
+            _db.SaveChanges();
             return Ok();
         }
     }
