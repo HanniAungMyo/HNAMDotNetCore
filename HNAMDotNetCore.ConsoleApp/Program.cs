@@ -3,7 +3,7 @@ using HNAMDotNetCore.ConsoleApp;
 using System.Data;
 using System.Data.SqlClient;
 
-Console.WriteLine("Hello, World!");
+//Console.WriteLine("Hello, World!");
 //Console.ReadLine();
 
 //Console.ReadKey();
@@ -16,11 +16,15 @@ Console.WriteLine("Hello, World!");
 
 //DapperExample dapper=new DapperExample();
 //dapper.Delete(12);
-EfCoreExample efCoreExample = new EfCoreExample();
+//EfCoreExample efCoreExample = new EfCoreExample();
 //efCoreExample.Read();
 //efCoreExample.Create("Title 1","Title 2","Title 3");
 //efCoreExample.Update(10,"HNAM","Hanni","Hi");
 //efCoreExample.Delete(2);
+//string query = "[BlogTitle] =@BlogTitle, ";
+////var item = query.Substring(0, query.Length - 5);
+//var item = query[2];
+//Console.WriteLine(item);
 Console.ReadKey();
 
 
